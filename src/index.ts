@@ -259,7 +259,7 @@ export async function paginate<Entity extends ObjectLiteral, OrderField>(
   // Use the provided function to convert the user-facing field name to the actual field name
   const field = options.orderFieldToKey(findOptions.orderBy.field);
   // Use the alias and the field name to generate the order key
-  const key = `${options.alias}.${field}`;
+  const key = `${options.alias}_${field}`;
   // Order by the field and direction
   query = query.orderBy({
     [key]: findOptions.orderBy.direction
